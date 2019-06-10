@@ -115,9 +115,9 @@ const App = () => {
 
           <Typography variant='h6' component='div'
                       className={classNames(styles.detailFamily, styles.fontSerif)}>
-            정문식 · 박희숙의 장남&nbsp;&nbsp;<strong className={styles.detailFamilyNewlywed}>정한터</strong>
+            정문식 · 박희숙의 장남&nbsp;&nbsp;<strong className={styles.detailFamilyNewlywed}>한터</strong>
             <br />
-            황용환 · 김윤희의 장녀&nbsp;&nbsp;<strong className={styles.detailFamilyNewlywed}>황수지</strong>
+            황용환 · 김윤희의 장녀&nbsp;&nbsp;<strong className={styles.detailFamilyNewlywed}>수지</strong>
           </Typography>
 
 
