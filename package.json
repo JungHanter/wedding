@@ -5,6 +5,7 @@
   "homepage": "https://junghanter.github.io/wedding",
   "dependencies": {
     "@material-ui/core": "^4.0.2",
+    "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-image-gallery": "^0.8.17",
