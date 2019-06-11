@@ -25,7 +25,71 @@ import imgSnaps from './assets/img/snap'
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./image-gallery-custom.css";
 
+import imgTemp from './assets/img/snap/temp.jpg'
+import thumpTemp from './assets/img/snap/thumbnail/12.jpg'
+
 const App = () => {
+  const [showVideo, setShowVideo] = React.useState({});
+  const [showFullscreenButton, setShowFullscreenButton] = React.useState(true);
+
+  const onSlide = (index) => {
+    resetVideo();
+  };
+
+  const resetVideo = () => {
+    setShowVideo({});
+    setShowFullscreenButton(true);
+  };
+
+  const toggleShowVideo = (url) => {
+    let showVideoState = showVideo;
+    showVideoState[url] = !Boolean(showVideoState[url]);
+    setShowVideo(showVideoState);
+
+    if (showVideo[url]) {
+      setShowFullscreenButton(false);
+    }
+  };
+
+  const renderVideo = (item) => {
+    return (
+      <div className='image-gallery-image'>
+        {
+          showVideo[item.embedUrl] ?
+            <div className='video-wrapper'>
+              <a
+                className='close-video'
+                onClick={toggleShowVideo.bind(this, item.embedUrl)}
+              >
+              </a>
+              <iframe
+                width='560'
+                height='315'
+                src={item.embedUrl}
+                frameBorder='0'
+                allowFullScreen
+              >
+              </iframe>
+            </div>
+            :
+            <div>
+              <div className='play-button' onClick={toggleShowVideo.bind(this, item.embedUrl)}></div>
+              <img src={item.original}/>
+            </div>
+        }
+      </div>
+    );
+  };
+
+  const galleryItems = [
+    {
+      original: imgTemp,
+      thumbnail: thumpTemp,
+      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0',
+      renderItem: renderVideo.bind(this)
+    },
+  ].concat(imgSnaps);
+
   const styles = useStyles();
   const { height, width } = useWindowDimensions();
 
@@ -135,9 +199,11 @@ const App = () => {
             Gallery
           </Typography>
 
-          <ImageGallery items={imgSnaps} lazyLoad={false} useBrowserFullscreen={false}
+          <ImageGallery items={galleryItems} lazyLoad={false} useBrowserFullscreen={false}
                         useTranslate3D={false} showPlayButton={false}
-                        preventDefaultTouchmoveEvent={true} />
+                        preventDefaultTouchmoveEvent={true}
+                        showFullscreenButton={showFullscreenButton}
+                        onSlide={onSlide.bind(this)} />
         </div>
 
       </Container>
