@@ -23,6 +23,7 @@ import imgDetailTitleFrameBottom from './assets/img/frames/flower_frame_bottom.p
 
 import imgSnaps from './assets/img/snap'
 import "react-image-gallery/styles/css/image-gallery.css";
+import "./image-gallery-custom.css";
 
 const App = () => {
   const styles = useStyles();
@@ -134,7 +135,9 @@ const App = () => {
             Gallery
           </Typography>
 
-          <ImageGallery items={imgSnaps} />
+          <ImageGallery items={imgSnaps} lazyLoad={false} useBrowserFullscreen={false}
+                        useTranslate3D={false} showPlayButton={false}
+                        preventDefaultTouchmoveEvent={true} />
         </div>
 
       </Container>
