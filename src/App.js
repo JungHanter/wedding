@@ -1,5 +1,4 @@
 import React from 'react';
-import requireContext from 'require-context'
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
