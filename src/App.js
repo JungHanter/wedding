@@ -1,13 +1,16 @@
 import React from 'react';
+import requireContext from 'require-context'
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import CardMedia from '@material-ui/core/CardMedia';
 
+import ImageGallery from 'react-image-gallery';
 import classNames from 'classnames';
-import useStyles from './App.styles';
+
 import useWindowDimensions from './utils/useWindowDimensions'
+import useStyles from './App.styles';
 
 import imgSnapMain from './assets/img/snap/32.jpg'
 import imgSnapMainMobile from './assets/img/snap/08.jpg'
@@ -19,12 +22,12 @@ import imgHeartFlower from './assets/img/frames/flower_1.png'
 import imgDetailTitleFrameTop from './assets/img/frames/flower_frame_top.png'
 import imgDetailTitleFrameBottom from './assets/img/frames/flower_frame_bottom.png'
 
+import imgSnaps from './assets/img/snap'
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const App = () => {
   const styles = useStyles();
   const { height, width } = useWindowDimensions();
-
-  let SnapImage
 
   return (
     <React.Fragment>
@@ -120,12 +123,19 @@ const App = () => {
             황용환 · 김윤희의 장녀&nbsp;&nbsp;<strong className={styles.detailFamilyNewlywed}>수지</strong>
           </Typography>
 
-
-
           <CardMedia
             className={styles.detailFrameBottom}
             image={imgDetailTitleFrameBottom}
           />
+        </div>
+
+        <div className={styles.gallery}>
+          <Typography variant='h3' component='h4' gutterBottom
+                      className={classNames(styles.detailTitle, styles.fontCursive)}>
+            Gallery
+          </Typography>
+
+          <ImageGallery items={imgSnaps} />
         </div>
 
       </Container>

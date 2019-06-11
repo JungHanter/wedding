@@ -159,6 +159,10 @@ const useStyles = makeStyles(theme => ({
     fontSize: '1.2em',
   },
 
+  gallery: {
+
+  },
+
   fontSerif: {
     fontFamily: ['GyeonggiBatang', 'Jeju Myeongjo', 'Nanum Myeongjo', 'serif'],
   },
