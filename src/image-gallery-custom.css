@@ -43,6 +43,7 @@
 
 .image-gallery-content.fullscreen .image-gallery-slide-wrapper{
   height: calc(100% - 82px);
+  min-height: 120px;
 }
 
 .image-gallery-content.fullscreen .image-gallery-swipe {
@@ -78,6 +79,7 @@
 
 .image-gallery-content.fullscreen .image-gallery-thumbnails-wrapper {
   max-height: 82px;
+  min-height: 52px;
 }
 
 .image-gallery-content.fullscreen .image-gallery-thumbnail-inner {
