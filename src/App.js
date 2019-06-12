@@ -19,6 +19,8 @@ import imgSnaps from './assets/img/snap'
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./image-gallery-custom.css";
 
+import imgGalleryDivider from './assets/img/frames/divider_m_2.png'
+
 import imgTemp from './assets/img/snap/temp.jpg'
 import thumpTemp from './assets/img/snap/thumbnail/12.jpg'
 
@@ -198,7 +200,15 @@ const App = () => {
                         preventDefaultTouchmoveEvent={true}
                         showFullscreenButton={showFullscreenButton}
                         onSlide={onSlide.bind(this)} />
+          <CardMedia
+            className={styles.galleryBottomDivider}
+            image={imgGalleryDivider} />
         </div>
+
+        <Typography variant='h2' component='h6' gutterBottom
+                    className={classNames(styles.thanksTitle, styles.fontCursive)}>
+          Thanks!
+        </Typography>
 
       </Container>
     </React.Fragment>

@@ -160,7 +160,27 @@ const useStyles = makeStyles(theme => ({
   },
 
   gallery: {
-
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(8),
+  },
+  galleryBottomDivider: {
+    marginTop: theme.spacing(12),
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '80%',
+    height: 0,
+    // paddingTop: '5.313%',  //100% for 5
+    // paddingTop: '4.25%',      //80% for 5
+    // paddingTop: '5.59937%',  //100% for 2
+    paddingTop: '4.4795%',      //80% for 2
+  },
+  thanksTitle: {
+    marginTop: theme.spacing(24),
+    marginBottom: theme.spacing(24),
+    align: 'center',
+    textAlign: 'center',
+    color: '#545450',
+    // color: '#7b7075',
   },
 
   fontSerif: {
