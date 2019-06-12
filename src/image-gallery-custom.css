@@ -137,6 +137,10 @@
   border-color: transparent transparent transparent rgba(255, 255, 255, 1);
 }
 
+.close-video {
+  color: #fff;
+}
+
 .close-video::before {
   content: '✖';
   cursor: pointer;
