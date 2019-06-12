@@ -164,7 +164,9 @@
 }
 
 .image-gallery-content.fullscreen .video-wrapper {
-
+  padding: 0;
+  width: 100%;
+  height: 100%; /* fit contain to screen */
 }
 
 .video-wrapper iframe {
