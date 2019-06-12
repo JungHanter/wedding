@@ -48,6 +48,8 @@ const App = () => {
 
     if (showVideo[url]) {
       setShowFullscreenButton(false);
+    } else {
+      resetVideo();
     }
   };
 
@@ -85,6 +87,7 @@ const App = () => {
     {
       original: imgTemp,
       thumbnail: thumpTemp,
+      originalClass: 'video',
       embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0',
       renderItem: renderVideo.bind(this)
     },
