@@ -11,12 +11,6 @@ import classNames from 'classnames';
 import useWindowDimensions from './utils/useWindowDimensions'
 import useStyles from './App.styles';
 
-import imgSnapMain from './assets/img/snap/32.jpg'
-import imgSnapMainMobile from './assets/img/snap/08.jpg'
-// import imgSnapMain from './assets/img/snap/temp.jpg'
-// import imgSnapMainMobile from './assets/img/snap/temp.jpg'
-import imgSnapSub from './assets/img/snap/07.jpg'
-
 import imgHeartFlower from './assets/img/frames/flower_1.png'
 import imgDetailTitleFrameTop from './assets/img/frames/flower_frame_top.png'
 import imgDetailTitleFrameBottom from './assets/img/frames/flower_frame_bottom.png'
@@ -82,6 +76,10 @@ const App = () => {
       </div>
     );
   };
+
+  const imgSnapMain = imgSnaps[31].original;
+  const imgSnapMainMobile = imgSnaps[7].original;
+  const imgSnapSub = imgSnaps[6].original;
 
   const galleryItems = [
     {
@@ -154,7 +152,7 @@ const App = () => {
                       className={classNames(styles.detailTitle, styles.fontCursive)}>
             Save the Date
           </Typography>
-          <Typography variant='p' component='p' paragraph
+          <Typography variant='body1' component='p' paragraph
                       className={classNames(styles.detailContent, styles.fontSerif)}>
             서로가 마주보며 다져온 사랑을 <br/>
             이제 함께 한 곳을 바라보며 걸어갈 수 있는 <br/>

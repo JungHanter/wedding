@@ -71,9 +71,9 @@ import thumbSnap34 from './thumbnail/34.jpg';
 import thumbSnap35 from './thumbnail/35.jpg';
 
 const images = [
-  {original: imgSnap01, thumbnail:thumbSnap01},
-  {original: imgSnap02, thumbnail:thumbSnap02},
-  {original: imgSnap03, thumbnail:thumbSnap03},
+  {original: 'https://i.imgur.com/rZEbRv9.jpg', thumbnail:thumbSnap01},
+  {original: 'https://i.imgur.com/wGAgL8d.jpg', thumbnail:thumbSnap02},
+  {original: 'https://i.imgur.com/XIIizrz.jpg', thumbnail:thumbSnap03},
   {original: imgSnap04, thumbnail:thumbSnap04},
   {original: imgSnap05, thumbnail:thumbSnap05},
   {original: imgSnap06, thumbnail:thumbSnap06},
