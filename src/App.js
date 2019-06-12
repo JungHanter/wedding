@@ -107,20 +107,17 @@ const App = () => {
           <CardMedia
             className={styles.mainSnap}
             image={imgSnapMain}
-            title="Main Snap"
-          />
+            title="Main Snap" />
         ) : ( height > width*2 ? (
           <CardMedia
             className={styles.mainSnapMobileLong}
             image={imgSnapMainMobile}
-            title="Main Snap (Mobile long ver.)"
-          />
+            title="Main Snap (Mobile long ver.)" />
         ) : (
           <CardMedia
             className={styles.mainSnapMobile}
             image={imgSnapMainMobile}
-            title="Main Snap (Mobile ver.)"
-          />
+            title="Main Snap (Mobile ver.)" />
         ))}
 
         <div className={styles.introduce} >
@@ -146,8 +143,7 @@ const App = () => {
         <div className={styles.details}>
           <CardMedia
             className={styles.detailFrameTop}
-            image={imgDetailTitleFrameTop}
-          />
+            image={imgDetailTitleFrameTop} />
           <Typography variant='h3' component='h3' gutterBottom
                       className={classNames(styles.detailTitle, styles.fontCursive)}>
             Save the Date
@@ -164,8 +160,7 @@ const App = () => {
           <CardMedia
             className={styles.detailSubSnap}
             image={imgSnapSub}
-            title="Sub Snap"
-          />
+            title="Sub Snap" />
 
           <div className={styles.newlywedsContainer}>
             <Typography variant='h4' component='div'
@@ -174,8 +169,7 @@ const App = () => {
             <CardMedia
               className={styles.newlywedsFlowerImg}
               image={imgHeartFlower}
-              title="Heart"
-            />
+              title="Heart" />
             <Typography variant='h4' component='div'
                         className={classNames(styles.newlywedsName2, styles.fontSerif)}>
               &nbsp;황수지</Typography>
@@ -190,8 +184,7 @@ const App = () => {
 
           <CardMedia
             className={styles.detailFrameBottom}
-            image={imgDetailTitleFrameBottom}
-          />
+            image={imgDetailTitleFrameBottom} />
         </div>
 
         <div className={styles.gallery}>
