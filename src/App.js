@@ -26,6 +26,9 @@ const App = () => {
   const [showVideo, setShowVideo] = React.useState({});
   const [showFullscreenButton, setShowFullscreenButton] = React.useState(true);
 
+  const styles = useStyles();
+  const { height, width } = useWindowDimensions();
+
   const onSlide = (index) => {
     resetVideo();
   };
@@ -84,43 +87,51 @@ const App = () => {
   const imgSnapMainMobile = 'https://i.imgur.com/gNtZwju.jpg';
   const imgSnapSub = 'https://i.imgur.com/GJO0rLo.jpg';
 
+  const isWide = width > height;            //Main as 31 : 8
+  const isLongPortrait = height > width*2;
+
   const imgSnaps = [
-    {original: 'https://i.imgur.com/rZEbRv9.jpg', thumbnail:'https://i.imgur.com/mNS6wtc.jpg', snapIdx: 1},
-    {original: 'https://i.imgur.com/wGAgL8d.jpg', thumbnail:'https://i.imgur.com/XwgeBxY.jpg', snapIdx: 2},
-    {original: 'https://i.imgur.com/XIIizrz.jpg', thumbnail:'https://i.imgur.com/eVEaII8.jpg', snapIdx: 3},
-    {original: 'https://i.imgur.com/dYqG4lF.jpg', thumbnail:'https://i.imgur.com/GGshmcX.jpg', snapIdx: 4},
-    {original: 'https://i.imgur.com/hnBRNvq.jpg', thumbnail:'https://i.imgur.com/fvTpKMn.jpg', snapIdx: 5},
-    {original: 'https://i.imgur.com/fBtNg6S.jpg', thumbnail:'https://i.imgur.com/ov7l43u.jpg', snapIdx: 6},
-    {original: 'https://i.imgur.com/GJO0rLo.jpg', thumbnail:'https://i.imgur.com/RKosXQe.jpg', snapIdx: 7, originalClass: 'portrait'},
-    {original: 'https://i.imgur.com/gNtZwju.jpg', thumbnail:'https://i.imgur.com/cel2UUc.jpg', snapIdx: 8, originalClass: 'portrait'},
-    {original: 'https://i.imgur.com/hGVWQjh.jpg', thumbnail:'https://i.imgur.com/DjIusFV.jpg', snapIdx: 9, originalClass: 'portrait'},
-    {original: 'https://i.imgur.com/O1tH3Ll.jpg', thumbnail:'https://i.imgur.com/zxKWHoR.jpg', snapIdx: 10},
-    {original: 'https://i.imgur.com/fPQSPHK.jpg', thumbnail:'https://i.imgur.com/bcb4xI0.jpg', snapIdx: 12},
-    {original: 'https://i.imgur.com/rVCxcCo.jpg', thumbnail:'https://i.imgur.com/9YpOiiW.jpg', snapIdx: 13},
-    {original: 'https://i.imgur.com/QfRrMow.jpg', thumbnail:'https://i.imgur.com/ymiEvsj.jpg', snapIdx: 14},
-    {original: 'https://i.imgur.com/BXMVUQJ.jpg', thumbnail:'https://i.imgur.com/KcBYn9V.jpg', snapIdx: 15},
-    {original: 'https://i.imgur.com/pabNNQ6.jpg', thumbnail:'https://i.imgur.com/dhMUCfA.jpg', snapIdx: 16},
-    {original: 'https://i.imgur.com/qid0CQf.jpg', thumbnail:'https://i.imgur.com/SAyPwa4.jpg', snapIdx: 17},
-    {original: 'https://i.imgur.com/MNhkfD5.jpg', thumbnail:'https://i.imgur.com/XqmrjCY.jpg', snapIdx: 18},
-    {original: 'https://i.imgur.com/GMVaewZ.jpg', thumbnail:'https://i.imgur.com/JqX6ia1.jpg', snapIdx: 19},
-    {original: 'https://i.imgur.com/sqfQn9p.jpg', thumbnail:'https://i.imgur.com/MEQa5qw.jpg', snapIdx: 20},
-    {original: 'https://i.imgur.com/zNWD000.jpg', thumbnail:'https://i.imgur.com/am0sL16.jpg', snapIdx: 21},
-    {original: 'https://i.imgur.com/1iCUAVf.jpg', thumbnail:'https://i.imgur.com/NgftAch.jpg', snapIdx: 22},
-    {original: 'https://i.imgur.com/xBegzSY.jpg', thumbnail:'https://i.imgur.com/TKl4cro.jpg', snapIdx: 23},
-    {original: 'https://i.imgur.com/q0KcH2D.jpg', thumbnail:'https://i.imgur.com/yTanjJy.jpg', snapIdx: 24},
-    {original: 'https://i.imgur.com/fRJU8CS.jpg', thumbnail:'https://i.imgur.com/mbxBfoG.jpg', snapIdx: 25},
-    {original: 'https://i.imgur.com/ezinKd7.jpg', thumbnail:'https://i.imgur.com/kIY7OOE.jpg', snapIdx: 26},
-    {original: 'https://i.imgur.com/uA2Hxjx.jpg', thumbnail:'https://i.imgur.com/ZJFricT.jpg', snapIdx: 27},
-    {original: 'https://i.imgur.com/OFDDby7.jpg', thumbnail:'https://i.imgur.com/XHUVRMJ.jpg', snapIdx: 28},
-    {original: 'https://i.imgur.com/1dYPIYK.jpg', thumbnail:'https://i.imgur.com/U98qqKK.jpg', snapIdx: 29},
-    {original: 'https://i.imgur.com/5nefz83.jpg', thumbnail:'https://i.imgur.com/F7V3WXA.jpg', snapIdx: 30},
-    {original: 'https://i.imgur.com/6Eq7CP7.jpg', thumbnail:'https://i.imgur.com/jxw4vIE.jpg', snapIdx: 31},
-    {original: 'https://i.imgur.com/yjRye1a.jpg', thumbnail:'https://i.imgur.com/q4gkXND.jpg', snapIdx: 32},
-    {original: 'https://i.imgur.com/HDzs4Nl.jpg', thumbnail:'https://i.imgur.com/JGRyiF9.jpg', snapIdx: 33},
-    {original: 'https://i.imgur.com/9eWTC8I.jpg', thumbnail:'https://i.imgur.com/cdalzsH.jpg', snapIdx: 34},
-    {original: 'https://i.imgur.com/W95fe2j.jpg', thumbnail:'https://i.imgur.com/HkzEi2E.jpg', snapIdx: 35},
-    {original: 'https://i.imgur.com/v5nwD1r.jpg', thumbnail:'https://i.imgur.com/psmrfVl.jpg', snapIdx: 36},
-  ];
+      {original: 'https://i.imgur.com/rZEbRv9.jpg', thumbnail:'https://i.imgur.com/mNS6wtc.jpg', snapIdx: 1},
+      // {original: 'https://i.imgur.com/wGAgL8d.jpg', thumbnail:'https://i.imgur.com/XwgeBxY.jpg', snapIdx: 2},
+      // {original: 'https://i.imgur.com/XIIizrz.jpg', thumbnail:'https://i.imgur.com/eVEaII8.jpg', snapIdx: 3},
+      // {original: 'https://i.imgur.com/dYqG4lF.jpg', thumbnail:'https://i.imgur.com/GGshmcX.jpg', snapIdx: 4},
+      {original: 'https://i.imgur.com/hnBRNvq.jpg', thumbnail:'https://i.imgur.com/fvTpKMn.jpg', snapIdx: 5},
+      // {original: 'https://i.imgur.com/fBtNg6S.jpg', thumbnail:'https://i.imgur.com/ov7l43u.jpg', snapIdx: 6},
+      // {original: 'https://i.imgur.com/GJO0rLo.jpg', thumbnail:'https://i.imgur.com/RKosXQe.jpg', snapIdx: 7, originalClass: 'portrait'},
+    ].concat(isWide ? (
+      [{original: 'https://i.imgur.com/gNtZwju.jpg', thumbnail:'https://i.imgur.com/cel2UUc.jpg', snapIdx: 8, originalClass: 'portrait'}]
+    ) : (
+      []
+    )).concat([
+      // {original: 'https://i.imgur.com/gNtZwju.jpg', thumbnail:'https://i.imgur.com/cel2UUc.jpg', snapIdx: 8, originalClass: 'portrait'},
+      // {original: 'https://i.imgur.com/hGVWQjh.jpg', thumbnail:'https://i.imgur.com/DjIusFV.jpg', snapIdx: 9, originalClass: 'portrait'},
+      // {original: 'https://i.imgur.com/O1tH3Ll.jpg', thumbnail:'https://i.imgur.com/zxKWHoR.jpg', snapIdx: 10},
+      // {original: 'https://i.imgur.com/fPQSPHK.jpg', thumbnail:'https://i.imgur.com/bcb4xI0.jpg', snapIdx: 11},
+      {original: 'https://i.imgur.com/rVCxcCo.jpg', thumbnail:'https://i.imgur.com/9YpOiiW.jpg', snapIdx: 12},
+      // {original: 'https://i.imgur.com/QfRrMow.jpg', thumbnail:'https://i.imgur.com/ymiEvsj.jpg', snapIdx: 13},
+      // {original: 'https://i.imgur.com/BXMVUQJ.jpg', thumbnail:'https://i.imgur.com/KcBYn9V.jpg', snapIdx: 14},
+      {original: 'https://i.imgur.com/pabNNQ6.jpg', thumbnail:'https://i.imgur.com/dhMUCfA.jpg', snapIdx: 15},
+      // {original: 'https://i.imgur.com/qid0CQf.jpg', thumbnail:'https://i.imgur.com/SAyPwa4.jpg', snapIdx: 16},
+      // {original: 'https://i.imgur.com/MNhkfD5.jpg', thumbnail:'https://i.imgur.com/XqmrjCY.jpg', snapIdx: 17},
+      {original: 'https://i.imgur.com/GMVaewZ.jpg', thumbnail:'https://i.imgur.com/JqX6ia1.jpg', snapIdx: 18},
+      // {original: 'https://i.imgur.com/sqfQn9p.jpg', thumbnail:'https://i.imgur.com/MEQa5qw.jpg', snapIdx: 19},
+      // {original: 'https://i.imgur.com/zNWD000.jpg', thumbnail:'https://i.imgur.com/am0sL16.jpg', snapIdx: 20},
+      // {original: 'https://i.imgur.com/1iCUAVf.jpg', thumbnail:'https://i.imgur.com/NgftAch.jpg', snapIdx: 21},
+      {original: 'https://i.imgur.com/xBegzSY.jpg', thumbnail:'https://i.imgur.com/TKl4cro.jpg', snapIdx: 22},
+      // {original: 'https://i.imgur.com/q0KcH2D.jpg', thumbnail:'https://i.imgur.com/yTanjJy.jpg', snapIdx: 23},
+      {original: 'https://i.imgur.com/fRJU8CS.jpg', thumbnail:'https://i.imgur.com/mbxBfoG.jpg', snapIdx: 24},
+      // {original: 'https://i.imgur.com/ezinKd7.jpg', thumbnail:'https://i.imgur.com/kIY7OOE.jpg', snapIdx: 25},
+      {original: 'https://i.imgur.com/uA2Hxjx.jpg', thumbnail:'https://i.imgur.com/ZJFricT.jpg', snapIdx: 26},
+      // {original: 'https://i.imgur.com/OFDDby7.jpg', thumbnail:'https://i.imgur.com/XHUVRMJ.jpg', snapIdx: 27},
+      // {original: 'https://i.imgur.com/1dYPIYK.jpg', thumbnail:'https://i.imgur.com/U98qqKK.jpg', snapIdx: 28},
+      // {original: 'https://i.imgur.com/5nefz83.jpg', thumbnail:'https://i.imgur.com/F7V3WXA.jpg', snapIdx: 29},
+      // {original: 'https://i.imgur.com/6Eq7CP7.jpg', thumbnail:'https://i.imgur.com/jxw4vIE.jpg', snapIdx: 30},
+      // {original: 'https://i.imgur.com/yjRye1a.jpg', thumbnail:'https://i.imgur.com/q4gkXND.jpg', snapIdx: 31},
+      {original: 'https://i.imgur.com/HDzs4Nl.jpg', thumbnail:'https://i.imgur.com/JGRyiF9.jpg', snapIdx: 32},
+      // {original: 'https://i.imgur.com/9eWTC8I.jpg', thumbnail:'https://i.imgur.com/cdalzsH.jpg', snapIdx: 33},
+      // {original: 'https://i.imgur.com/W95fe2j.jpg', thumbnail:'https://i.imgur.com/HkzEi2E.jpg', snapIdx: 34},
+      {original: 'https://i.imgur.com/v5nwD1r.jpg', thumbnail:'https://i.imgur.com/psmrfVl.jpg', snapIdx: 35},
+  ]);
 
   const galleryItems = imgSnaps.concat([
     {
@@ -139,9 +150,6 @@ const App = () => {
     },
   ]);
 
-  const styles = useStyles();
-  const { height, width } = useWindowDimensions();
-
   return (
     <React.Fragment>
       <CssBaseline />
@@ -151,12 +159,12 @@ const App = () => {
           WEDDING ANNOUNCEMENT
         </Typography>
 
-        {width > height ? (
+        {isWide ? (
           <CardMedia
             className={styles.mainSnap}
             image={imgSnapMain}
             title="Main Snap" />
-        ) : ( height > width*2 ? (
+        ) : ( isLongPortrait ? (
           <CardMedia
             className={styles.mainSnapMobileLong}
             image={imgSnapMainMobile}
