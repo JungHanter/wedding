@@ -3,13 +3,14 @@
   "name": "Wedding Announcement of Hanter and Suji",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon.png",
+      "sizes": "32x32",
+      "type": "image/webp"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "orientation": "portrait",
+  "theme_color": "#e9967a",
   "background_color": "#ffffff"
 }
