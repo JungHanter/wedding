@@ -257,6 +257,7 @@ const App = () => {
                         showBullets={showGalleryInfo} showIndex={showGalleryInfo}
                         preventDefaultTouchmoveEvent={false}
                         showFullscreenButton={showFullscreenButton}
+                        lazyLoad={!isWide} /* for mobile */
                         onSlide={onSlide.bind(this)} />
           <CardMedia
             className={styles.galleryBottomDivider}
