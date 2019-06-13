@@ -78,9 +78,12 @@ const App = () => {
     );
   };
 
-  const imgSnapMain = imgSnaps[31].original;
-  const imgSnapMainMobile = imgSnaps[7].original;
-  const imgSnapSub = imgSnaps[6].original;
+  // const imgSnapMain = imgSnaps[31].original;
+  // const imgSnapMainMobile = imgSnaps[7].original;
+  // const imgSnapSub = imgSnaps[6].original;
+  const imgSnapMain = 'https://i.imgur.com/yjRye1a.jpg';
+  const imgSnapMainMobile = 'https://i.imgur.com/gNtZwju.jpg';
+  const imgSnapSub = 'https://i.imgur.com/GJO0rLo.jpg';
 
   const galleryItems = imgSnaps.concat([
     {
