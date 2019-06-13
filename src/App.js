@@ -14,15 +14,14 @@ import useStyles from './App.styles';
 import imgHeartFlower from './assets/img/frames/flower_1.png'
 import imgDetailTitleFrameTop from './assets/img/frames/flower_frame_top.png'
 import imgDetailTitleFrameBottom from './assets/img/frames/flower_frame_bottom.png'
+import imgGalleryDivider from './assets/img/frames/divider_m_2.png'
 
 import imgSnaps from './assets/img/snap'
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./image-gallery-custom.css";
 
-import imgGalleryDivider from './assets/img/frames/divider_m_2.png'
-
-import imgTemp from './assets/img/snap/temp.jpg'
-import thumpTemp from './assets/img/snap/thumbnail/12.jpg'
+// import imgTemp from './assets/img/snap/temp.jpg'
+// import thumpTemp from './assets/img/snap/thumbnail/12.jpg'
 
 const App = () => {
   const [showVideo, setShowVideo] = React.useState({});
@@ -83,15 +82,22 @@ const App = () => {
   const imgSnapMainMobile = imgSnaps[7].original;
   const imgSnapSub = imgSnaps[6].original;
 
-  const galleryItems = [
+  const galleryItems = imgSnaps.concat([
     {
-      original: imgTemp,
-      thumbnail: thumpTemp,
+      original: 'https://i.imgur.com/vwMBBYR.jpg',
+      thumbnail: 'https://i.imgur.com/GUwi9QX.jpg',
       originalClass: 'video',
-      embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0',
+      embedUrl: 'https://www.youtube.com/embed/EOUiGao9s9c?autoplay=1&showinfo=0',
       renderItem: renderVideo.bind(this)
     },
-  ].concat(imgSnaps);
+    {
+      original: 'https://i.imgur.com/VnxxGxK.jpg',
+      thumbnail: 'https://i.imgur.com/Eb5YW88.jpg',
+      originalClass: 'video',
+      embedUrl: 'https://www.youtube.com/embed/KNxc4MUAs30?autoplay=1&showinfo=0',
+      renderItem: renderVideo.bind(this)
+    },
+  ]);
 
   const styles = useStyles();
   const { height, width } = useWindowDimensions();
@@ -197,7 +203,7 @@ const App = () => {
 
           <ImageGallery items={galleryItems} lazyLoad={false} useBrowserFullscreen={false}
                         useTranslate3D={false} showPlayButton={false}
-                        preventDefaultTouchmoveEvent={true}
+                        preventDefaultTouchmoveEvent={false}
                         showFullscreenButton={showFullscreenButton}
                         onSlide={onSlide.bind(this)} />
           <CardMedia

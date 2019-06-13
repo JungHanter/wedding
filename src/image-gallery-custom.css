@@ -13,7 +13,8 @@
 }
 
 /*.image-gallery-image */
-.image-gallery-slide.portrait {
+.image-gallery-slide.portrait,
+.image-gallery-slide.video{
   background-color: black;
 }
 
