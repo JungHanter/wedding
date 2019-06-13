@@ -1,23 +1,21 @@
 {
   "files": {
-    "main.css": "/wedding/static/css/main.244d21be.chunk.css",
-    "main.js": "/wedding/static/js/main.2e070140.chunk.js",
-    "main.js.map": "/wedding/static/js/main.2e070140.chunk.js.map",
+    "main.css": "/wedding/static/css/main.ada31cb0.chunk.css",
+    "main.js": "/wedding/static/js/main.827eb477.chunk.js",
+    "main.js.map": "/wedding/static/js/main.827eb477.chunk.js.map",
     "runtime~main.js": "/wedding/static/js/runtime~main.9668b3b9.js",
     "runtime~main.js.map": "/wedding/static/js/runtime~main.9668b3b9.js.map",
     "static/css/2.f74a8007.chunk.css": "/wedding/static/css/2.f74a8007.chunk.css",
-    "static/js/2.80caafb2.chunk.js": "/wedding/static/js/2.80caafb2.chunk.js",
-    "static/js/2.80caafb2.chunk.js.map": "/wedding/static/js/2.80caafb2.chunk.js.map",
+    "static/js/2.2ae7b768.chunk.js": "/wedding/static/js/2.2ae7b768.chunk.js",
+    "static/js/2.2ae7b768.chunk.js.map": "/wedding/static/js/2.2ae7b768.chunk.js.map",
     "index.html": "/wedding/index.html",
-    "precache-manifest.f937088c2377ce779cc0bd7a9833740a.js": "/wedding/precache-manifest.f937088c2377ce779cc0bd7a9833740a.js",
+    "precache-manifest.7641bff58467a124b0be6eb479ca4ad9.js": "/wedding/precache-manifest.7641bff58467a124b0be6eb479ca4ad9.js",
     "service-worker.js": "/wedding/service-worker.js",
     "static/css/2.f74a8007.chunk.css.map": "/wedding/static/css/2.f74a8007.chunk.css.map",
-    "static/css/main.244d21be.chunk.css.map": "/wedding/static/css/main.244d21be.chunk.css.map",
-    "static/media/12.jpg": "/wedding/static/media/12.fd441476.jpg",
+    "static/css/main.ada31cb0.chunk.css.map": "/wedding/static/css/main.ada31cb0.chunk.css.map",
     "static/media/divider_m_2.png": "/wedding/static/media/divider_m_2.d5308c7c.png",
     "static/media/flower_1.png": "/wedding/static/media/flower_1.e4d2ad8b.png",
     "static/media/flower_frame_bottom.png": "/wedding/static/media/flower_frame_bottom.e7424231.png",
-    "static/media/flower_frame_top.png": "/wedding/static/media/flower_frame_top.7df053c9.png",
-    "static/media/temp.jpg": "/wedding/static/media/temp.9e78e1d2.jpg"
+    "static/media/flower_frame_top.png": "/wedding/static/media/flower_frame_top.7df053c9.png"
   }
 }
