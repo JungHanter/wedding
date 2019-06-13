@@ -251,6 +251,7 @@ const App = () => {
 
           <ImageGallery items={galleryItems} lazyLoad={false} useBrowserFullscreen={false}
                         useTranslate3D={false} showPlayButton={false}
+                        showBullets={true} showIndex={true}
                         preventDefaultTouchmoveEvent={false}
                         showFullscreenButton={showFullscreenButton}
                         onSlide={onSlide.bind(this)} />
