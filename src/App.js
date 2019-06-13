@@ -25,6 +25,7 @@ import "./image-gallery-custom.css";
 const App = () => {
   const [showVideo, setShowVideo] = React.useState({});
   const [showFullscreenButton, setShowFullscreenButton] = React.useState(true);
+  const [showGalleryInfo, setShowGalleryInfo] = React.useState(true);
 
   const styles = useStyles();
   const { height, width } = useWindowDimensions();
@@ -36,6 +37,7 @@ const App = () => {
   const resetVideo = () => {
     setShowVideo({});
     setShowFullscreenButton(true);
+    setShowGalleryInfo(true);
   };
 
   const toggleShowVideo = (url) => {
@@ -45,6 +47,7 @@ const App = () => {
 
     if (showVideo[url]) {
       setShowFullscreenButton(false);
+      setShowGalleryInfo(false);
     } else {
       resetVideo();
     }
@@ -251,7 +254,7 @@ const App = () => {
 
           <ImageGallery items={galleryItems} lazyLoad={false} useBrowserFullscreen={false}
                         useTranslate3D={false} showPlayButton={false}
-                        showBullets={true} showIndex={true}
+                        showBullets={showGalleryInfo} showIndex={showGalleryInfo}
                         preventDefaultTouchmoveEvent={false}
                         showFullscreenButton={showFullscreenButton}
                         onSlide={onSlide.bind(this)} />
