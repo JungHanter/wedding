@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1df5ad819d22cd9e9db5165971ded61b",
+    "revision": "9cc627bee0d104e1f773187e7ffeeb25",
     "url": "/wedding/index.html"
   },
   {
-    "revision": "d3c89d7fa6a2e8db9c41",
+    "revision": "04827ff3025094f7dd60",
     "url": "/wedding/static/css/2.f74a8007.chunk.css"
   },
   {
-    "revision": "e9c34b43df3786983210",
+    "revision": "605f649b20e3b685fd40",
     "url": "/wedding/static/css/main.ada31cb0.chunk.css"
   },
   {
-    "revision": "d3c89d7fa6a2e8db9c41",
-    "url": "/wedding/static/js/2.0fee57a1.chunk.js"
+    "revision": "04827ff3025094f7dd60",
+    "url": "/wedding/static/js/2.8a1b0db6.chunk.js"
   },
   {
-    "revision": "e9c34b43df3786983210",
-    "url": "/wedding/static/js/main.abd7028e.chunk.js"
+    "revision": "605f649b20e3b685fd40",
+    "url": "/wedding/static/js/main.6699357e.chunk.js"
   },
   {
     "revision": "1fcd0ea7d7592bde907d",
