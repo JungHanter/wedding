@@ -112,6 +112,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down(380)]: {
       fontSize: '1em',
     },
+    [theme.breakpoints.down(300)]: {
+      fontSize: '0.8em',
+    },
   },
   detailSubSnap: {
     marginTop: theme.spacing(4),

@@ -254,7 +254,7 @@ const App = () => {
             Gallery
           </Typography>
 
-          <ImageGallery items={galleryItems} lazyLoad={false} useBrowserFullscreen={false}
+          <ImageGallery items={galleryItems} useBrowserFullscreen={false}
                         useTranslate3D={false} showPlayButton={false}
                         showBullets={showGalleryInfo} showIndex={showGalleryInfo}
                         preventDefaultTouchmoveEvent={false}
