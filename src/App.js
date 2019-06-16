@@ -11,11 +11,6 @@ import classNames from 'classnames';
 import useWindowDimensions from './utils/useWindowDimensions'
 import useStyles from './App.styles';
 
-import imgHeartFlower from './assets/img/frames/flower_1.png'
-import imgDetailTitleFrameTop from './assets/img/frames/flower_frame_top.png'
-import imgDetailTitleFrameBottom from './assets/img/frames/flower_frame_bottom.png'
-import imgGalleryDivider from './assets/img/frames/divider_m_2.png'
-
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./image-gallery-custom.css";
 
@@ -81,17 +76,20 @@ const App = () => {
         }
       </div>
     );
-  };
+  }
 
-  // const imgSnapMain = imgSnaps[31].original;
-  // const imgSnapMainMobile = imgSnaps[7].original;
-  // const imgSnapSub = imgSnaps[6].original;
-  const imgSnapMain = 'https://i.imgur.com/yjRye1a.jpg';
-  const imgSnapMainMobile = 'https://i.imgur.com/gNtZwju.jpg';
-  const imgSnapSub = 'https://i.imgur.com/GJO0rLo.jpg';
 
   const isWide = width > height;            //Main as 31 : 8
   const isLongPortrait = height > width*2;
+
+  const imgDetailTitleFrameTop = 'https://i.imgur.com/SeBdV6W.png';
+  const imgDetailTitleFrameBottom = 'https://i.imgur.com/K9vltG4.png';
+  const imgHeartFlower = 'https://i.imgur.com/Vu3pUBq.png';
+  const imgGalleryDivider = 'https://i.imgur.com/RV2AMkC.png';
+
+  const imgSnapMain = 'https://i.imgur.com/yjRye1a.jpg';
+  const imgSnapMainMobile = 'https://i.imgur.com/gNtZwju.jpg';
+  const imgSnapSub = 'https://i.imgur.com/GJO0rLo.jpg';
 
   const imgSnaps = [
       {original: 'https://i.imgur.com/rZEbRv9.jpg', thumbnail:'https://i.imgur.com/mNS6wtc.jpg', snapIdx: 1},
@@ -152,6 +150,7 @@ const App = () => {
       renderItem: renderVideo.bind(this)
     },
   ]);
+
 
   return (
     <React.Fragment>
