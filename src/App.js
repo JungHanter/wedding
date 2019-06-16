@@ -14,8 +14,10 @@ import useStyles from './App.styles';
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./image-gallery-custom.css";
 
-// import imgTemp from './assets/img/snap/temp.jpg'
-// import thumpTemp from './assets/img/snap/thumbnail/12.jpg'
+// For IE
+import jQuery from "jquery";
+window.$ = window.jQuery = jQuery;
+
 
 const App = () => {
   const [showVideo, setShowVideo] = React.useState({});
@@ -76,7 +78,7 @@ const App = () => {
         }
       </div>
     );
-  }
+  };
 
 
   const isWide = width > height;            //Main as 31 : 8
@@ -151,6 +153,29 @@ const App = () => {
     },
   ]);
 
+  React.useEffect(() => {
+    // // Update the document using the browser API
+    let userAgent, ieReg, ie;
+    userAgent = window.navigator.userAgent;
+    ieReg = /msie|Trident.*rv[ :]*11\./gi;
+    ie = ieReg.test(userAgent);
+
+    if(ie) {
+      console.log("Fix IE's object-fit");
+
+      window.$(".image-gallery-image").each(function () {
+        let $container = window.$(this),
+          imgUrl = $container.find("img").prop("src");
+        if (imgUrl) {
+          $container.css("backgroundImage", 'url(' + imgUrl + ')').addClass("ie-mode");
+        }
+      });
+    }
+    else
+    {
+      console.log("Not need to Fix (no IE ^^)");
+    }
+  });
 
   return (
     <React.Fragment>

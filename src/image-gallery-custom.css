@@ -103,6 +103,15 @@
   background-size: contain;
 }
 
+.image-gallery-image.ie-mode {
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.image-gallery-image.ie-mode img {
+  opacity: 0;
+}
 
 .play-button-wrapper {
 }
